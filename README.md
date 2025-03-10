@@ -1,24 +1,44 @@
-# README
+# Cipher Genius
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web based cipher based puzzle game. You can create an account and it will track the number of ciphers you have solved in each category and the time it took to solve the cipher. If you don't want to create an account you have the option to continue as a guest as solve cipher puzzles.
 
-Things you may want to cover:
+![homepage image](cipher_genius_homepage.png)
 
-* Ruby version
+## Deployed Site
+- Coming soon
 
-* System dependencies
+## Front End Repo
+[Front End Repo](https://github.com/MiTOBrien/cipher_genius_fe/tree/main)
 
-* Configuration
+## Technology Used
+* Ruby 3.2.3
+* Rails 7.1.5
+* PostgresSQL 1.1
+* jsonapi serializer
+* RSpec 7.0.0
+* Pry
 
-* Database creation
+## Getting Started
+To run this locally clone this repository onto your local machine. Change directory into the cipher-genius-be directory and run bundle install to install all dependiences. To launch the backend server:
 
-* Database initialization
+```sh
+rails server (or rails s)
+```
 
-* How to run the test suite
+To see the application fully functioning you will also need to clone down the front end repository and run that as well.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Database creation and setup
+To quickly set up the database from the command line:
+```sh
+rails db:{drop,create,migrate,seed} or rails db:reset
+```
 
-* Deployment instructions
+![db schema](cipher_genius_db_schema.png)
 
-* ...
+## Testing Suite
+* RSpec
+
+To run the RSpec tests from the command prompt run:
+```sh
+bundle exec rspec spec
+```
