@@ -39,11 +39,11 @@ jobs:
         run: bin/rails db:schema:load
       # Add or replace test runners here
       - name: Run RSpec tests
-        run: if [ -d "spec" ] && [ "$(ls -A spec | wc -l)" -gt 0 ]; then
-            bin/rspec --force-color --format documentation
-          else
-            echo "No tests found, skipping RSpec."
-          fi
+        run: if [ -d "spec" ] && [ "$(find spec -type f -name '*_spec.rb' | wc -l)" -gt 0 ]; then
+               bin/rspec --force-color --format documentation
+             else
+               echo "No tests found, skipping RSpec."
+             fi
         # run: bin/rake
 
   lint:
