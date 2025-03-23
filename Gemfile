@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.2.4"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
@@ -43,6 +43,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'rspec-rails', '~> 7.0.0'
   gem "pry"
+  gem "shoulda-matchers"
 end
 
 group :development do
