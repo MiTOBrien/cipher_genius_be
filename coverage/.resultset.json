@@ -1,0 +1,78 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/cipher.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_cipher_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/user_cipher.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1742772094
+  }
+}
