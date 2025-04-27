@@ -3,19 +3,45 @@
     "coverage": {
       "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/controllers/api/v1/users/registrations_controller.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           1,
+          null,
           1,
+          2,
+          null,
+          2,
+          2,
+          2,
+          null,
+          null,
           1,
+          null,
           1,
+          2,
           1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
           null,
           1,
           2,
           null,
           null,
           1,
-          0,
+          2,
+          null,
+          null,
+          1,
+          null,
           null,
           null,
           null,
@@ -37,12 +63,21 @@
           1,
           null,
           1,
-          2,
+          0,
           null,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1745779100
+    "timestamp": 1745783801
   }
 }
