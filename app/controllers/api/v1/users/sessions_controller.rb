@@ -4,16 +4,12 @@ module Api
       class SessionsController < Devise::SessionsController
         respond_to :json
 
-        # 🛠 Add this create method
         def create
           user = User.find_by(email: sign_in_params[:email])
 
           if user&.valid_password?(sign_in_params[:password])
-            sign_in(:user, store: false)
-            render json: {
-              message: 'Logged in successfully.',
-              user: UserSerializer.new(user).serializable_hash[:data][:attributes]
-            }, status: :ok
+            sign_in(:user, user, store: false)  # <-- Pass user here!
+            respond_with(user)                  # <-- Now it will use your respond_with
           else
             render json: { error: 'Invalid Email or Password' }, status: :unauthorized
           end
@@ -22,8 +18,11 @@ module Api
         private
 
         def respond_with(resource, _opts = {})
+          token = Warden::JWTAuth::UserEncoder.new.call(resource, :user, nil).first
+
           render json: {
             message: 'Logged in successfully.',
+            token: token,
             user: UserSerializer.new(resource).serializable_hash[:data][:attributes]
           }, status: :ok
         end
