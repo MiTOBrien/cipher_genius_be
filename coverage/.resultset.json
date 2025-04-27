@@ -1,78 +1,48 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/cipher.rb": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/controllers/api/v1/users/registrations_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_cipher_spec.rb": {
-        "lines": [
-          1,
           null,
           1,
           1,
-          2,
+          1,
+          1,
+          1,
+          null,
+          1,
           2,
           null,
           null,
           1,
-          2,
-          2,
+          0,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/user_cipher.rb": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/controllers/application_controller.rb": {
         "lines": [
           1,
           1,
+          null,
           1,
           null,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_spec.rb": {
-        "lines": [
+          null,
           1,
           null,
           1,
-          1,
-          2,
-          2,
-          null,
           null,
           1,
           2,
-          2,
           null,
-          null
-        ]
-      },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
           null
         ]
       }
     },
-    "timestamp": 1742772094
+    "timestamp": 1745779100
   }
 }
