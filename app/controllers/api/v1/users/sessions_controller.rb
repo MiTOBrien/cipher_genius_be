@@ -28,9 +28,11 @@ module Api
         end
 
         def respond_to_on_destroy
-          current_user ? 
-            render(json: { message: "Logged out successfully." }, status: :ok) :
-            render(json: { message: "Couldn't find an active session." }, status: :unauthorized)
+          if all_signed_out?
+            render json: { message: "Logged out successfully." }, status: :ok
+          else
+            render json: { error: "Failed to logout." }, status: :unauthorized
+          end
         end
 
         def sign_in_params

@@ -13,7 +13,7 @@
       <img src="./assets/0.13.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-04-27T15:56:42-04:00">2025-04-27T15:56:42-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-04-28T13:07:11-04:00">2025-04-28T13:07:11-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,7 +29,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.19
+         1.41
        </span>
     </span> hits/line
     )
@@ -70,24 +70,24 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#4ccb2b3f10a6379decf7bb8533d61a3c417edd7a" class="src_link" title="app/controllers/api/v1/users/registrations_controller.rb">app/controllers/api/v1/users/registrations_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">44</td>
+            <td class="strong t-file__name"><a href="#c2538b738e7fbba508d6997a213f81ac63e80c72" class="src_link" title="app/controllers/api/v1/users/sessions_controller.rb">app/controllers/api/v1/users/sessions_controller.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">95.24 %</td>
+            <td class="cell--number">47</td>
             <td class="cell--number">21</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.33</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">1.52</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#edb890065346bcbe8be1d894cafcf6445dc7e39c" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">87.50 %</td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">15</td>
             <td class="cell--number">8</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0.88</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.25</td>
             
           </tr>
         
@@ -119,12 +119,12 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="4ccb2b3f10a6379decf7bb8533d61a3c417edd7a">
+        <div class="source_table" id="c2538b738e7fbba508d6997a213f81ac63e80c72">
   <div class="header">
-    <h3>app/controllers/api/v1/users/registrations_controller.rb</h3>
+    <h3>app/controllers/api/v1/users/sessions_controller.rb</h3>
     <h4>
       <span class="green">
-  100.0%
+  95.24%
 </span>
 
       lines covered
@@ -134,8 +134,8 @@
 
     <div class="t-line-summary">
       <b>21</b> relevant lines.
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
 
     
@@ -189,7 +189,7 @@
 
             
 
-            <code class="ruby">      class RegistrationsController &lt; Devise::RegistrationsController</code>
+            <code class="ruby">      class SessionsController &lt; Devise::SessionsController</code>
           </li>
         </div>
       
@@ -223,12 +223,24 @@
 
             
 
-            <code class="ruby">        before_action :configure_permitted_parameters, only: [:create]</code>
+            <code class="ruby">        def create</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="covered" data-hits="3" data-linenumber="8">
+            
+              <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          user = User.find_by(email: sign_in_params[:email])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
             
 
             
@@ -238,36 +250,26 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="3" data-linenumber="10">
             
-              <span class="hits">1</span>
-            
-
+              <span class="hits">3</span>
             
 
-            <code class="ruby">        def create</code>
+            
+
+            <code class="ruby">          if user&amp;.valid_password?(sign_in_params[:password])</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="10">
+          <li class="covered" data-hits="2" data-linenumber="11">
             
               <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">          build_resource(sign_up_params)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-
-            
-
-            <code class="ruby"></code>
+            <code class="ruby">            sign_in(:user, user, store: false)  # &lt;-- Pass user here!</code>
           </li>
         </div>
       
@@ -279,31 +281,29 @@
 
             
 
-            <code class="ruby">          resource.save</code>
+            <code class="ruby">            respond_with(user)                  # &lt;-- Now it will use your respond_with</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="13">
-            
-              <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="13">
             
 
             
 
-            <code class="ruby">          yield resource if block_given?</code>
+            <code class="ruby">          else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="14">
             
-              <span class="hits">2</span>
-            
-
+              <span class="hits">1</span>
             
 
-            <code class="ruby">          respond_with resource</code>
+            
+
+            <code class="ruby">            render json: { error: &#39;Invalid Email or Password&#39; }, status: :unauthorized</code>
           </li>
         </div>
       
@@ -313,7 +313,7 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">          end</code>
           </li>
         </div>
       
@@ -323,12 +323,22 @@
 
             
 
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="18">
             
               <span class="hits">1</span>
             
@@ -340,7 +350,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
+          <li class="never" data-hits="" data-linenumber="19">
             
 
             
@@ -350,7 +360,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
+          <li class="covered" data-hits="1" data-linenumber="20">
             
               <span class="hits">1</span>
             
@@ -362,26 +372,14 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="20">
+          <li class="covered" data-hits="2" data-linenumber="21">
             
               <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">          if resource.persisted?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            
-              <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">            render json: {</code>
+            <code class="ruby">          token = Warden::JWTAuth::UserEncoder.new.call(resource, :user, nil).first</code>
           </li>
         </div>
       
@@ -391,17 +389,19 @@
 
             
 
-            <code class="ruby">              message: &#39;Signed up successfully.&#39;,</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="23">
+          <li class="covered" data-hits="2" data-linenumber="23">
+            
+              <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">              user: UserSerializer.new(resource).serializable_hash[:data][:attributes]</code>
+            <code class="ruby">          render json: {</code>
           </li>
         </div>
       
@@ -411,7 +411,7 @@
 
             
 
-            <code class="ruby">            }, status: :created</code>
+            <code class="ruby">            message: &#39;Logged in successfully.&#39;,</code>
           </li>
         </div>
       
@@ -421,19 +421,17 @@
 
             
 
-            <code class="ruby">          else</code>
+            <code class="ruby">            token: token,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
-            
-              <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="26">
             
 
             
 
-            <code class="ruby">            render json: { errors: resource.errors.full_messages }, status: :unprocessable_entity</code>
+            <code class="ruby">            user: UserSerializer.new(resource).serializable_hash[:data][:attributes]</code>
           </li>
         </div>
       
@@ -443,7 +441,7 @@
 
             
 
-            <code class="ruby">          end</code>
+            <code class="ruby">          }, status: :ok</code>
           </li>
         </div>
       
@@ -475,29 +473,31 @@
 
             
 
-            <code class="ruby">        def configure_permitted_parameters</code>
+            <code class="ruby">        def respond_to_on_destroy</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="31">
+          <li class="covered" data-hits="1" data-linenumber="31">
             
-              <span class="hits">2</span>
-            
-
+              <span class="hits">1</span>
             
 
-            <code class="ruby">          devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :username, :first_name, :last_name, :password, :password_confirmation])</code>
+            
+
+            <code class="ruby">          if all_signed_out?</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="32">
+          <li class="covered" data-hits="1" data-linenumber="32">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">            render json: { message: &quot;Logged out successfully.&quot; }, status: :ok</code>
           </li>
         </div>
       
@@ -507,31 +507,27 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">          else</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="34">
-            
-              <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="34">
             
 
             
 
-            <code class="ruby">        def sign_up_params</code>
+            <code class="ruby">            render json: { error: &quot;Failed to logout.&quot; }, status: :unauthorized</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="35">
-            
-              <span class="hits">2</span>
+          <li class="never" data-hits="" data-linenumber="35">
             
 
             
 
-            <code class="ruby">          params.require(:user).permit(:email, :username, :first_name, :last_name, :password, :password_confirmation)</code>
+            <code class="ruby">          end      </code>
           </li>
         </div>
       
@@ -541,7 +537,7 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">          # current_user ? </code>
           </li>
         </div>
       
@@ -551,19 +547,17 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">          #   render(json: { message: &quot;Logged out successfully.&quot; }, status: :ok) :</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="38">
-            
-              <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="38">
             
 
             
 
-            <code class="ruby">        def after_sign_up_path_for(resource)</code>
+            <code class="ruby">          #   render(json: { message: &quot;Couldn&#39;t find an active session.&quot; }, status: :unauthorized)</code>
           </li>
         </div>
       
@@ -573,7 +567,7 @@
 
             
 
-            <code class="ruby">          nil</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
@@ -583,27 +577,31 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="covered" data-hits="1" data-linenumber="41">
+            
+              <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">        def sign_in_params</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="covered" data-hits="5" data-linenumber="42">
+            
+              <span class="hits">5</span>
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">          params.permit(:email, :password)</code>
           </li>
         </div>
       
@@ -613,12 +611,42 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="44">
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
             
 
             
@@ -636,8 +664,8 @@
   <div class="header">
     <h3>app/controllers/application_controller.rb</h3>
     <h4>
-      <span class="yellow">
-  87.5%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -647,8 +675,8 @@
 
     <div class="t-line-summary">
       <b>8</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -793,7 +821,9 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
+          <li class="covered" data-hits="3" data-linenumber="13">
+            
+              <span class="hits">3</span>
             
 
             
