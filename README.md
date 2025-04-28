@@ -14,13 +14,24 @@ This is a web based cipher based puzzle game. You can create an account and it w
 * Ruby 3.2.3
 * Rails 7.1.5
 * PostgresSQL 1.1
+
+### Gems
+* devise
+* devise-jwt
 * jsonapi serializer
 * RSpec 7.0.0
+* shoulda-matchers
+* Factorybot
+* simplecov
 * Pry
 
 ## Getting Started
-To run this locally clone this repository onto your local machine. Change directory into the cipher-genius-be directory and run bundle install to install all dependiences. To launch the backend server:
+To run this locally clone this repository onto your local machine. Change directory into the cipher-genius-be directory and install all dependiences:
+```
+bundle install
+```
 
+To launch the backend server:
 ```sh
 rails server (or rails s)
 ```
