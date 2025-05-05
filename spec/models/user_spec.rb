@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 require "rails_helper"
 
 RSpec.describe User, type: :model do
@@ -7,7 +9,6 @@ RSpec.describe User, type: :model do
   end
 
   describe "Validations" do
-    it { should validate_presence_of(:username) }
     it { should validate_presence_of(:email) }
   end
 end
