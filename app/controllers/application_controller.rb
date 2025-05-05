@@ -1,15 +1,10 @@
 class ApplicationController < ActionController::API
-  include ActionController::MimeResponds
-  
-  before_action :authenticate_user!, except: [:create, :new]
-  
-  respond_to :json
-
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
-
+  
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name username])
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[name username])
   end
 end

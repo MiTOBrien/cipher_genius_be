@@ -1,86 +1,61 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/controllers/api/v1/users/sessions_controller.rb": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/cipher.rb": {
         "lines": [
           1,
           1,
           1,
-          1,
-          1,
-          null,
-          1,
-          3,
-          null,
-          3,
-          2,
-          2,
-          null,
+          null
+        ]
+      },
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_cipher_spec.rb": {
+        "lines": [
           1,
           null,
-          null,
-          null,
           1,
-          null,
           1,
           2,
-          null,
           2,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
           1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          5,
-          null,
-          null,
-          null,
+          2,
+          2,
           null,
           null
         ]
       },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/controllers/application_controller.rb": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/models/user_cipher.rb": {
         "lines": [
           1,
           1,
-          null,
           1,
           null,
           1,
-          null,
           1,
-          null,
-          1,
-          null,
-          1,
-          3,
-          null,
           null
         ]
       },
-      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/app/serializers/user_serializer.rb": {
+      "/Users/michaelobrien/Programming/Projects/ciphergenius/cipher-genius-be/spec/models/user_spec.rb": {
         "lines": [
-          1,
           1,
           null,
           1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1745860031
+    "timestamp": 1746304245
   }
 }

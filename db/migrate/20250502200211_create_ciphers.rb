@@ -1,7 +1,7 @@
-class CreateCiphers < ActiveRecord::Migration[7.1]
+class CreateCiphers < ActiveRecord::Migration[8.0]
   def change
     create_table :ciphers do |t|
-      t.string :cipher_name
+      t.string :cipher
 
       t.timestamps
     end
