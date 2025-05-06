@@ -68,6 +68,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+# Add Devise helper for Authentication
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 # Add Shouulda Matchers config
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
