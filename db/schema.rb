@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_02_200215) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_08_175507) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -23,9 +23,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_02_200215) do
   create_table "user_ciphers", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "cipher_id", null: false
-    t.integer "solved_time"
+    t.integer "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "won"
     t.index ["cipher_id"], name: "index_user_ciphers_on_cipher_id"
     t.index ["user_id"], name: "index_user_ciphers_on_user_id"
   end
