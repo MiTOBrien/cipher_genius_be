@@ -1,6 +1,7 @@
 class Api::V1::PasswordsController < ApplicationController
   def create
-    user = User.find_by(email: params[:email])
+    email = params.dig(:user, :email)
+    user = User.find_by(email: email)
     if user.present?
       user.send_reset_password_instructions
       render json: { message: 'Password reset instructions sent.' }, status: :ok
@@ -21,6 +22,6 @@ class Api::V1::PasswordsController < ApplicationController
   private
 
   def reset_password_params
-    params.permit(:reset_password_token, :password, :password_confirmation)
+    params.require(:user).permit(:reset_password_token, :password, :password_confirmation)
   end
 end
