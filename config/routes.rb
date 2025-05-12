@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       post 'password/forgot', to: 'passwords#create'
       put 'password/reset', to: 'passwords#update'
 
+      get 'user_ciphers', to: 'user_ciphers#index'
       post 'user_ciphers/create', to: 'user_ciphers#create'
 
     end
