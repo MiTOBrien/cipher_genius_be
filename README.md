@@ -2,7 +2,7 @@
 
 This is a web based cipher based puzzle game. You can create an account and it will track the number of ciphers you have solved in each category and the time it took to solve the cipher. If you don't want to create an account you have the option to continue as a guest as solve cipher puzzles.
 
-![homepage image](cipher_genius_homepage.png)
+![homepage image](Cipher_Genius_login.png)
 
 ## Deployed Site
 - Coming soon
@@ -43,6 +43,18 @@ To quickly set up the database from the command line:
 ```sh
 rails db:{drop,create,migrate,seed} or rails db:reset
 ```
+
+## Routes/Endpoints
+### users
+- Register        - /signup
+- Login           - /login
+- Logout          - /logout
+- Forgot password - /password
+- Update profile  - /api/v1/users/update
+
+### user_ciphers - to track and retrieve game statistics
+- post  - /api/v1/user_ciphers/create
+- get   - /api/v1/user_ciphers
 
 ![db schema](cipher_genius_db_schema.png)
 
