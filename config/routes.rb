@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       put 'users/update', to: 'users#update'
+      put 'users/change-password', to: 'users#change_password'
 
       post 'password/forgot', to: 'passwords#create'
       put 'password/reset', to: 'passwords#update'
