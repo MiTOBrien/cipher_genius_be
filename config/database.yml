@@ -82,6 +82,6 @@ production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
 
-  queue:
-    <<: *default
-    database: <%= ENV['DATABASE_URL'] %>
+queue:
+  <<: *default
+  database: <%= ENV['DATABASE_URL'] %>
