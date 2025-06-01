@@ -1,6 +1,6 @@
 class Api::V1::PasswordsController < ApplicationController
   def create
-    email = params.dig(:user, :email)
+    email = params[:email]
     user = User.find_by(email: email)
     if user.present?
       user.send_reset_password_instructions
