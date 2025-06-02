@@ -59,8 +59,8 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # Specify outgoing SMTP server. Remember to add smtp/* credentials via rails credentials:edit.
   config.action_mailer.smtp_settings = {
-    user_name: 'FORGOT_PASSWORD_USERNAME',
-    password: 'FORGOT_PASSWORD_APP_PASSWORD',
+    user_name: ENV['FORGOT_PASSWORD_USERNAME'],
+    password: ENV['FORGOT_PASSWORD_APP_PASSWORD'],
     address: "smtp.gmail.com",
     port: 587,
     domain: 'cipher-genius.onrender.com',
