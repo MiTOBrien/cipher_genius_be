@@ -31,8 +31,13 @@ class CustomDeviseMailer < Devise::Mailer
     @token = token
     @resource = record
 
+    frontend_url = Rails.env.production? ? 
+    "https://cipher-genius.onrender.com" : 
+    "http://localhost:8080"  # or whatever port your Vue dev server uses
+  
     # Inject a custom URL into the email template via instance var
-    @custom_reset_link = "https://cipher-genius.onrender.com/reset-password?token=#{token}"
+    @custom_reset_link = "#{frontend_url}/reset-password?token=#{token}"
+
 
     devise_mail(record, :reset_password_instructions, opts)
   end
