@@ -33,7 +33,7 @@ class CustomDeviseMailer < Devise::Mailer
 
       frontend_url = Rails.env.production? ? 
     "https://cipher-genius.onrender.com" : 
-    "http://localhost:3000"
+    "http://localhost:8080"
     # Inject a custom URL into the email template via instance var
     @custom_reset_link = "#{frontend_url}/reset-password?token=#{token}"
 
