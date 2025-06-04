@@ -35,7 +35,7 @@ class CustomDeviseMailer < Devise::Mailer
     "https://cipher-genius.onrender.com" : 
     "http://localhost:8080"
     # Inject a custom URL into the email template via instance var
-    @custom_reset_link = "#{frontend_url}/reset-password?token=#{token}"
+    @custom_reset_link = "#{frontend_url}/#/reset-password?token=#{token}"
 
     devise_mail(record, :reset_password_instructions, opts)
   end
